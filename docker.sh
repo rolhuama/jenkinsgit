@@ -1,5 +1,10 @@
 #!/bin/bash
-cd remigio1000
+
+mkdir señoresteban
+cd señoresteban
+git init
+git pull https://github.com/rolhuama/pruebasdecodigo.git
 gradle bootjar
-docker build -t remigio1000 .
-docker push rolervengador/remigio1000
+docker build -t señoresteban .
+docker tag señoresteban rolervengador/señoresteban
+docker push rolervengador/señoresteban
