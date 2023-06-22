@@ -1,0 +1,24 @@
+#Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod
+spec:
+  containers:
+  - name: contenedor
+    image: rolervengador/remigio1000
+    ports:
+    - containerPort: 8080
+---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio
+spec:
+  selector:
+    app: pod
+  ports:
+  - protocol: TCP
+    port: 9000
+    targetPort: 8080
